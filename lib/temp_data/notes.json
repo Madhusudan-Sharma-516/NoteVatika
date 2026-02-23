@@ -1,0 +1,267 @@
+[
+  {
+    "id": "note1",
+    "topicId": "top1",
+    "heading": "Introduction to Data Structures",
+    "subtitle": "Foundation of Efficient Programming",
+    "introduction": "A data structure is a way of organizing and storing data in a computer so that it can be accessed and modified efficiently. Data structures are fundamental building blocks of computer science and are crucial for developing high-performance software applications.",
+    "keyPoints": [
+      "Data structures help in managing large amounts of data efficiently.",
+      "They are essential for designing efficient algorithms.",
+      "Common types include Arrays, Linked Lists, Stacks, Queues, Trees, and Graphs.",
+      "Choosing the right data structure can significantly impact program performance.",
+      "Understanding data structures is a prerequisite for competitive programming."
+    ],
+    "codeBlock": {
+      "language": "c",
+      "code": "#include <stdio.h>\n\nint main() {\n    // Simple array demonstration\n    int arr[5] = {1, 2, 3, 4, 5};\n    \n    printf(\"Array elements:\\n\");\n    for (int i = 0; i < 5; i++) {\n        printf(\"arr[%d] = %d\\n\", i, arr[i]);\n    }\n    \n    return 0;\n}"
+    },
+    "table": {
+      "headers": [
+        "Structure",
+        "Access",
+        "Insert",
+        "Delete"
+      ],
+      "rows": [
+        [
+          "Array",
+          "O(1)",
+          "O(n)",
+          "O(n)"
+        ],
+        [
+          "Linked List",
+          "O(n)",
+          "O(1)",
+          "O(1)"
+        ],
+        [
+          "Stack",
+          "O(n)",
+          "O(1)",
+          "O(1)"
+        ],
+        [
+          "Queue",
+          "O(n)",
+          "O(1)",
+          "O(1)"
+        ],
+        [
+          "Hash Table",
+          "O(1)",
+          "O(1)",
+          "O(1)"
+        ]
+      ]
+    },
+    "imagePath": null,
+    "imageCaption": "",
+    "summary": "Data structures are the backbone of computer science, enabling efficient storage and retrieval of data for complex operations. Mastering them is essential for any aspiring programmer."
+  },
+  {
+    "id": "note2",
+    "topicId": "top2",
+    "heading": "Arrays in Programming",
+    "subtitle": "Linear Data Storage Made Simple",
+    "introduction": "An array is a collection of elements stored at contiguous memory locations. It is the simplest and most widely used data structure. Arrays provide constant-time access to elements using their index.",
+    "keyPoints": [
+      "Arrays store elements of the same data type in contiguous memory.",
+      "Access time is O(1) — the fastest among basic data structures.",
+      "Insertion and deletion require shifting elements, making them O(n).",
+      "Arrays have a fixed size once declared (in most languages).",
+      "Multi-dimensional arrays are used for matrices and grids."
+    ],
+    "codeBlock": {
+      "language": "c",
+      "code": "#include <stdio.h>\n\nint main() {\n    int arr[5] = {10, 20, 30, 40, 50};\n    int n = 5;\n    \n    // Linear search in array\n    int target = 30;\n    for (int i = 0; i < n; i++) {\n        if (arr[i] == target) {\n            printf(\"Found %d at index %d\\n\", target, i);\n            break;\n        }\n    }\n    \n    return 0;\n}"
+    },
+    "table": {
+      "headers": [
+        "Operation",
+        "Time Complexity",
+        "Description"
+      ],
+      "rows": [
+        [
+          "Access",
+          "O(1)",
+          "Direct index access"
+        ],
+        [
+          "Search",
+          "O(n)",
+          "Linear search"
+        ],
+        [
+          "Insert",
+          "O(n)",
+          "Shift elements right"
+        ],
+        [
+          "Delete",
+          "O(n)",
+          "Shift elements left"
+        ]
+      ]
+    },
+    "imagePath": null,
+    "imageCaption": "",
+    "summary": "Arrays are fundamental data structures offering fast access but slower insertions and deletions. They're perfect for scenarios where you need quick element retrieval by index."
+  },
+  {
+    "id": "note3",
+    "topicId": "top3",
+    "heading": "Linked Lists",
+    "subtitle": "Dynamic Data Chains",
+    "introduction": "A linked list is a linear data structure where elements are stored in nodes. Each node contains data and a reference (pointer) to the next node in the sequence, allowing for dynamic memory allocation.",
+    "keyPoints": [
+      "Linked lists use dynamic memory — they grow and shrink at runtime.",
+      "Insertion and deletion at the beginning are O(1) operations.",
+      "Accessing an element requires traversal, making it O(n).",
+      "Types include Singly, Doubly, and Circular linked lists.",
+      "No wasted memory — each node is allocated only when needed."
+    ],
+    "codeBlock": {
+      "language": "c",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n\nstruct Node {\n    int data;\n    struct Node* next;\n};\n\nvoid printList(struct Node* head) {\n    struct Node* temp = head;\n    while (temp != NULL) {\n        printf(\"%d -> \", temp->data);\n        temp = temp->next;\n    }\n    printf(\"NULL\\n\");\n}\n\nint main() {\n    struct Node* head = malloc(sizeof(struct Node));\n    head->data = 1;\n    head->next = malloc(sizeof(struct Node));\n    head->next->data = 2;\n    head->next->next = NULL;\n    \n    printList(head);\n    return 0;\n}"
+    },
+    "table": {
+      "headers": [
+        "Type",
+        "Forward",
+        "Backward",
+        "Circular"
+      ],
+      "rows": [
+        [
+          "Singly",
+          "Yes",
+          "No",
+          "No"
+        ],
+        [
+          "Doubly",
+          "Yes",
+          "Yes",
+          "No"
+        ],
+        [
+          "Circular",
+          "Yes",
+          "Optional",
+          "Yes"
+        ]
+      ]
+    },
+    "imagePath": null,
+    "imageCaption": "",
+    "summary": "Linked lists provide dynamic, flexible data storage with efficient insertions and deletions, making them ideal when the data size is unknown or changes frequently."
+  },
+  {
+    "id": "note4",
+    "topicId": "top4",
+    "heading": "Variables and Data Types in C",
+    "subtitle": "Building Blocks of Every Program",
+    "introduction": "Variables are named storage locations in memory that hold data. Data types define the kind of data a variable can store and the operations that can be performed on it.",
+    "keyPoints": [
+      "Variables must be declared with a data type before use in C.",
+      "Primary data types: int, float, double, char.",
+      "Derived types include arrays, pointers, structures, and unions.",
+      "Type modifiers (short, long, signed, unsigned) alter storage size.",
+      "Constants are variables whose values cannot be changed after initialization."
+    ],
+    "codeBlock": {
+      "language": "c",
+      "code": "#include <stdio.h>\n\nint main() {\n    // Variable declarations\n    int age = 21;\n    float gpa = 8.5;\n    char grade = 'A';\n    double pi = 3.14159265;\n    \n    printf(\"Age: %d\\n\", age);\n    printf(\"GPA: %.1f\\n\", gpa);\n    printf(\"Grade: %c\\n\", grade);\n    printf(\"Pi: %.8f\\n\", pi);\n    \n    return 0;\n}"
+    },
+    "table": {
+      "headers": [
+        "Data Type",
+        "Size (bytes)",
+        "Range"
+      ],
+      "rows": [
+        [
+          "int",
+          "4",
+          "-2,147,483,648 to 2,147,483,647"
+        ],
+        [
+          "float",
+          "4",
+          "3.4E-38 to 3.4E+38"
+        ],
+        [
+          "double",
+          "8",
+          "1.7E-308 to 1.7E+308"
+        ],
+        [
+          "char",
+          "1",
+          "-128 to 127"
+        ]
+      ]
+    },
+    "imagePath": null,
+    "imageCaption": "",
+    "summary": "Variables and data types form the foundation of programming in C. Understanding them is essential for writing correct and efficient programs."
+  },
+  {
+    "id": "note5",
+    "topicId": "top5",
+    "heading": "Loops and Conditionals in C",
+    "subtitle": "Controlling the Flow of Execution",
+    "introduction": "Control flow statements determine the order in which instructions are executed. Conditionals allow branching, while loops enable repetition of code blocks.",
+    "keyPoints": [
+      "if-else statements allow decision-making in programs.",
+      "switch-case provides multi-way branching on a single value.",
+      "for loops are best when the number of iterations is known.",
+      "while loops repeat as long as a condition remains true.",
+      "do-while guarantees at least one execution of the loop body."
+    ],
+    "codeBlock": {
+      "language": "c",
+      "code": "#include <stdio.h>\n\nint main() {\n    // For loop example\n    printf(\"Counting 1 to 5:\\n\");\n    for (int i = 1; i <= 5; i++) {\n        printf(\"%d \", i);\n    }\n    printf(\"\\n\");\n    \n    // If-else example\n    int marks = 85;\n    if (marks >= 90) {\n        printf(\"Grade: A+\\n\");\n    } else if (marks >= 80) {\n        printf(\"Grade: A\\n\");\n    } else {\n        printf(\"Grade: B\\n\");\n    }\n    \n    return 0;\n}"
+    },
+    "table": {
+      "headers": [
+        "Statement",
+        "Use Case",
+        "Syntax"
+      ],
+      "rows": [
+        [
+          "if-else",
+          "Binary decision",
+          "if (cond) { } else { }"
+        ],
+        [
+          "switch",
+          "Multi-way branch",
+          "switch (val) { case: }"
+        ],
+        [
+          "for",
+          "Known iterations",
+          "for (init; cond; inc)"
+        ],
+        [
+          "while",
+          "Unknown iterations",
+          "while (cond) { }"
+        ],
+        [
+          "do-while",
+          "At least once",
+          "do { } while (cond)"
+        ]
+      ]
+    },
+    "imagePath": null,
+    "imageCaption": "",
+    "summary": "Loops and conditionals are essential control structures that give programs the ability to make decisions and repeat operations efficiently."
+  }
+]

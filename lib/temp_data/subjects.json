@@ -1,0 +1,37 @@
+[
+  {
+    "id": "sub1",
+    "courseId": "bca",
+    "name": "Data Structures",
+    "code": "BCA-301",
+    "icon": "🌳"
+  },
+  {
+    "id": "sub2",
+    "courseId": "bca",
+    "name": "Programming in C",
+    "code": "BCA-101",
+    "icon": "💻"
+  },
+  {
+    "id": "sub3",
+    "courseId": "bca",
+    "name": "DBMS",
+    "code": "BCA-401",
+    "icon": "🗄️"
+  },
+  {
+    "id": "sub4",
+    "courseId": "pgdca",
+    "name": "Operating System",
+    "code": "PGDCA-201",
+    "icon": "⚙️"
+  },
+  {
+    "id": "sub5",
+    "courseId": "dca",
+    "name": "MS Office",
+    "code": "DCA-101",
+    "icon": "📄"
+  }
+]
